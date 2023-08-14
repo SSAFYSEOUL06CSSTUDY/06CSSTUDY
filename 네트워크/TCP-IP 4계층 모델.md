@@ -8,6 +8,7 @@
 6. [**링크 계층(네트워크 인터페이스 계층)**](#6-링크-계층네트워크-인터페이스-계층)
 7. [**캡슐화 과정**](#7-캡슐화-과정)
 8. [**PDU**](#8-pdu)
+9. [**Qna**](#9-qna)
 
 # 1. 계층 모델
 
@@ -37,6 +38,7 @@
 ## 1-3. 4계층과 7계층의 대응
 
 <!-- 계층 비교 이미지 -->
+
 ![tcp-osi](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/ea223e03-31cd-40e7-a2da-580cf3f755bf)
 <br><br>
 
@@ -78,8 +80,8 @@
 - 장점 : 패킷이 '순서대로' 도착
 - 단점 : 초기에 설정한 가상 회선에 따라 경로가 고정되어 있어,네트워크 상황이 급변하면 대응이 어려움
 - 신뢰성이 중요한 ATM등에 사용
-<!-- 가상회선 패킷 교환 방식 이미지 -->
-<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/2e30b96b-d3d0-45fc-98bf-8b06cbef2597">
+  <!-- 가상회선 패킷 교환 방식 이미지 -->
+  <img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/2e30b96b-d3d0-45fc-98bf-8b06cbef2597">
 
 ## 4-2. TCP 연결 성립 과정 & 연결 해제 과정
 
@@ -89,8 +91,8 @@
   &#8251; ISN : 초기 네트워크 연결을 할 때 할당된 고유 번호
 - 2단계-SYN+ACK : 서버는 클라이언트의 SYN을 수신, 클라이언트에게 승인번호 전송(클라ISN+1)
 - 3단계-ACK : 클라이언트도 서버로 승인번호 전송(서버ISN+1)
-<!-- 3way handshake 이미지 -->
-<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/b76ce2f5-4dfd-456f-967f-cedd95e22d59">
+  <!-- 3way handshake 이미지 -->
+  <img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/b76ce2f5-4dfd-456f-967f-cedd95e22d59">
 
 > 연결 해제 과정 - 4way handshake
 
@@ -98,8 +100,8 @@
 - 2단계 : 서버는 클라이언트에게 승인(응답) 세그먼트 전송(ACK-Acknowledgement), FIN_WAIT_2로 대기
 - 3단계 : 서버는 일정시간이 지난 후 종료 세크먼트 전송(FIN)
 - 4단계 : 클라이언트는 다시 서버로 ACK를 보내고 TIME_WAIT 상태가 되고 일정 시간 후에 연결을 종료
-<!-- 4way handshake 이미지 -->
-<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/1926c7c9-955e-4b10-b52c-f6cd0fbc70bd">
+  <!-- 4way handshake 이미지 -->
+  <img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/1926c7c9-955e-4b10-b52c-f6cd0fbc70bd">
 
 ## 4-3. UDP
 
@@ -138,9 +140,10 @@
 <br><br>
 
 # 7. 캡슐화 과정
- > 데이터를 송수신하는 과정에서  캡슐호와 역캡슐화 과정이 발생
-- 데이터를 보낼 때는 캡슐화, 받을 때는 역캡슐화
 
+> 데이터를 송수신하는 과정에서 캡슐호와 역캡슐화 과정이 발생
+
+- 데이터를 보낼 때는 캡슐화, 받을 때는 역캡슐화
 
 애플리케이션 계층에서 처음 생성된 데이터 패킷은 링크 계층을 지날 때까지
 데이터를 전송하는데 필요한 정보인 헤더를 데이터 앞에 붙여 나가게 된다.
@@ -149,10 +152,18 @@
 데이터를 받는 입장에서는 링크 계층에서 받은 데이터 패킷에서 헤더를 제거해나가며 최종적으로 최초로 보낸 데이터를 얻는 것을 "역캡슐화 과정"이라고 한다.
 
 ## 7-1. 이더넷 프레임
+
 > 링크 계층에서 사용되는 전송 메커니즘
 
-
- 
 <br><br>
 
 # 8. PDU
+
+# 9. QnA
+
+> TCP 연결 성립 과정 과 연결 해제 과정의 가장 큰 차이점은 TIME WAIT이라고 할 수 있습니다.<br>
+> TIME WAIT은 왜 필요할까요?
+
+<br>
+
+>
