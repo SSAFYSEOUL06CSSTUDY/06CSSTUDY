@@ -37,9 +37,7 @@
 ## 1-3. 4계층과 7계층의 대응
 
 <!-- 계층 비교 이미지 -->
-
-## 1-4. 계층 모델은 왜 사용하는가?
-
+![tcp-osi](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/ea223e03-31cd-40e7-a2da-580cf3f755bf)
 <br><br>
 
 # 2. 계층 간 데이터 송수신 과정
@@ -50,6 +48,7 @@
 브라우저를 통해 클라이언트에서 서버로 데이터를 요청한다면 아래 그림과 같은 데이터 이동이 발생 합니다.
 
 <!-- 계층간 데이터 송수신 이미지 -->
+<img width="600" alt="계층간 데이터 송수신 이미지" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/048afdba-cbd7-4e35-8dd3-75eaf1caf793">
 
 애플리케이션 => 전송 => 인터넷 => 링크 => 링크 => 인터넷 => 전송 => 애플리케이션<br>
 위의 데이터 이동 과정을 통해 클라이언트와 서버간의 데이터 송수신이 이루어집니다.
@@ -80,6 +79,7 @@
 - 단점 : 초기에 설정한 가상 회선에 따라 경로가 고정되어 있어,네트워크 상황이 급변하면 대응이 어려움
 - 신뢰성이 중요한 ATM등에 사용
 <!-- 가상회선 패킷 교환 방식 이미지 -->
+<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/2e30b96b-d3d0-45fc-98bf-8b06cbef2597">
 
 ## 4-2. TCP 연결 성립 과정 & 연결 해제 과정
 
@@ -90,6 +90,7 @@
 - 2단계-SYN+ACK : 서버는 클라이언트의 SYN을 수신, 클라이언트에게 승인번호 전송(클라ISN+1)
 - 3단계-ACK : 클라이언트도 서버로 승인번호 전송(서버ISN+1)
 <!-- 3way handshake 이미지 -->
+<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/b76ce2f5-4dfd-456f-967f-cedd95e22d59">
 
 > 연결 해제 과정 - 4way handshake
 
@@ -98,6 +99,7 @@
 - 3단계 : 서버는 일정시간이 지난 후 종료 세크먼트 전송(FIN)
 - 4단계 : 클라이언트는 다시 서버로 ACK를 보내고 TIME_WAIT 상태가 되고 일정 시간 후에 연결을 종료
 <!-- 4way handshake 이미지 -->
+<img width="600" alt="가상 회선 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/1926c7c9-955e-4b10-b52c-f6cd0fbc70bd">
 
 ## 4-3. UDP
 
@@ -109,6 +111,7 @@
 - IP주소를 활용한 인터넷에 주로 활용
 
 <!-- 데이터그램 패킷 교환 방식 이미지 -->
+<img width="600" alt="데이터그램 패킷 교환 방식" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/5847cb34-1ecb-43b8-9ab9-463a29544c75">
 
 <br><br>
 
@@ -131,8 +134,6 @@
 - OSI7계층의 0과1을로 이루어진 데이터를 처리하는 **물리 계층**과 에러 확인 및 접근 제어를 하는**데이터 링크계층**으로 구성
 - 데이터 링크 계층은 MAC 주소를 통해 통신
 - 물리 계층은 전기적 신호를 통해 통신
-
-
 
 <br><br>
 
