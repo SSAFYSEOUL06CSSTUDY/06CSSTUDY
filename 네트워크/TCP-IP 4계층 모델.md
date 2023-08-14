@@ -39,7 +39,7 @@
 
 <!-- 계층 비교 이미지 -->
 
-![tcp-osi](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/ea223e03-31cd-40e7-a2da-580cf3f755bf)
+<img width="600" alt="계층간 데이터 송수신 이미지" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/79710b96-53f1-4c7b-b827-d060d7e35d0c">
 <br><br>
 
 # 2. 계층 간 데이터 송수신 과정
