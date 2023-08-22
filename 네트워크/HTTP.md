@@ -97,8 +97,7 @@ HTTP/2는 HTTPS 위에서 동작한다.
 
 ## SSL/TTS
 
-<img width="637" alt="스크린샷 2023-08-22 오후 10 10 55" src="https://github.com/Youth787/06CSSTUDY/assets/90955152/36ea9214-3fc4-4a92-a6fe-e4abdf0e1e12">
-
+<img width="637" alt="스크린샷 2023-08-22 오후 10 10 55" src="https://github.com/Youth787/06CSSTUDY/assets/90955152/1b5b2c63-de32-4094-92d0-a5059132337c">
 
 전송 계층에서 보안을 제공하는 프로토콜.
 
