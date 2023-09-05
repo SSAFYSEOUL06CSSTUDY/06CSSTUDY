@@ -16,6 +16,7 @@
 > ## 비선점형 방식(non-preemptive)
 
 - 한번 CPU가 할당된 프로세스는 그 작업이 완료될 때까지 CPU를 반환X
+- 강제로 종료 X, 프로세스가 스스로 종료 그래서 컨택스트 스위칭 부하가 적음
 - FCFS(First-Come, First-Served) 알고리즘, SJF(Shortest Job First) 알고리즘이 이에 해당
 
 > ## 선점형 방식(preemptive)
