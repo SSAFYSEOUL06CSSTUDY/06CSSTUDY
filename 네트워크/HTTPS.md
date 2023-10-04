@@ -18,6 +18,7 @@ HTTP 프로토콜로 전송되는 데이터는 '스니핑'할 수 있는 데이�
 
 크롬 등의 브라우저에서는 HTTP프로토콜을 사용 할 시 접근을 차단
 <!-- 크롬 차단 이미지 자리 -->
+<img width="400" alt="사용시브라우저경고" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/64faae71-0d08-4667-9f09-87064f2538b0">
 
 # 2. HTTP의 문재점을 해결한 HTTPS
 > HTTPS는 HTTP+Secure의 약자로서 서버와 브라우저 사이에 오가는 정보를 SSL 인증서와 TSL 프로토콜 을 사용해 데이터를 암호화 함으로서 HTTP의 문제점을 해결
@@ -29,6 +30,7 @@ HTTP 프로토콜로 전송되는 데이터는 '스니핑'할 수 있는 데이�
 >"ITM0IRyiEhVpa6VnKyExMiEgNveroyWBPlgGyfkflYjDaaFf/Kn3bo3OfghBPDWo6AfSHlNtL8N7ITEwIXc1gU5X73xMsJormzzXlwOyrCs+9XCPk63Y+z0="
 
 <!--https암호화 이미지 자리 -->
+<img width="400" alt="왜https를사용하는가" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/60675bfe-35cd-49cb-83e1-ec493b224c0f">
 
     HTTP와 HTTPS의 가장 큰 차이점 '보안'
     HTTP의 일반 텍스트(text)에 SSL이나 TLS프로토콜을 씌워 통해 데이터를 암호화하는 기법
