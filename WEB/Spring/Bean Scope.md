@@ -55,6 +55,12 @@ https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
 ### Bean 소멸
 - IoC 컨테이너가 종료 될 때, 객체가 소멸된다. (ctx.close)
 ### 객체 생성/소멸 메서드 등록
+|메서드|설명|
+|---|---|
+|init-method|생성자 호출 이후 자동으로 호출된다. (Beans 객체 내부에서 정의)|
+|destroy-method|객체가 소멸될 때 자동으로 호출된다. (Beans 객체 내부에서 정의)|
+|default-init-method|init-method 를 설정하지 않은 경우 자동으로 호출된다. (xml 파일에서 설정)|
+|default-destroy-method|destroy-method 를 설정하지 않은 경우 자동으로 호출된다. (xml 파일에서 설정)|
 
 ### Bean 객체
 ```xml
@@ -95,5 +101,3 @@ public class BeanTest {
 </beans>
 ```
 https://espania.tistory.com/383
-
-# MVC Framework
