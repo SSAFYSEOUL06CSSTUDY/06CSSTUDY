@@ -59,7 +59,7 @@
 
 # 4. OAuth Process
 
-## 기본적이 흐름은 다음과 같다.
+## 기본적인 흐름은 다음과 같다.
 
 ### 1. Client => resource owner 으로 authorization을 요청
 
@@ -68,3 +68,4 @@
 ### 3. 유효한 grant일 경우 Authorization Server는 액세스 토큰을 Client에게 전달
 
 ### 4. Client는 해당 access token을 resource server와의 API 통신에 사용
+![oauth-abstract](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/e5b4f5c5-7f9c-417e-ade7-7af870770f94)
