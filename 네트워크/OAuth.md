@@ -1,6 +1,10 @@
 ### 목차
 
 1. [**OAuth란?**](#1-oauth란)
+2. [**OAuth Roles**](#2-oauth-roles)
+3. [**OAuth Term**](#3-oauth-term)
+4. [**OAuth Process**](#4-oauth-process)
+5. [**OAuth 인증의 종류**](#5-oauth-인증의-종류)
 
 # 1. OAuth란?
 
@@ -68,4 +72,32 @@
 ### 3. 유효한 grant일 경우 Authorization Server는 액세스 토큰을 Client에게 전달
 
 ### 4. Client는 해당 access token을 resource server와의 API 통신에 사용
+
 ![oauth-abstract](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/e5b4f5c5-7f9c-417e-ade7-7af870770f94)
+
+# 5. OAuth 인증의 종류
+
+> 각 방식을 자세하게 이해하면 좋지만, 실질적으로 어려우므로 특징을 이해하고 넘어가면 좋습니다.
+
+## Implicit Grant
+
+> 가장 구현이 간단한 구조, Authorization code 발급이 없고, Refresh Token 발급이 없음
+
+    - 주기적으로 Client가 AccessToken을 얻는 번거로운 과정 필요
+    - Access Token이 URL을 통해 전달되어 보안이 취약
+
+## Authorization Code Grant
+
+> 4가지 방식 중 가장 많이 사용되는 방식, Implicit Grant 방식의 단점을 보완한 방식
+
+    - 더 이상 Access Token을 URL을 통해 전달 하지 않음, 백 채널을 이용해 안전하게 전달
+    - 보안이 강화
+    - refresh token을 이용해 불필요한 재인증을 방지
+
+## Resource Owner Password Credentials Grant
+
+> 자사 앱(client)에 직접 로그인하는 방식, Authorization code없이 접속 가능
+
+## Client Credential Grant
+
+> Owner가 존재하지 않으며, Client가 직접 Authorization Server에 접근할 수 있음
