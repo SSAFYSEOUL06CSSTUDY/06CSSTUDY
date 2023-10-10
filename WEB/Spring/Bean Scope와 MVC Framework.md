@@ -48,10 +48,52 @@ https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
 https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
 
 ## Bean 생명주기
-- Bean 생성
-- Bean 소멸
-- 객체 생성/소멸 메서드 등록
+### Bean 생성
+- Singleton인 경우, xml 로딩 시 객체가 생성된다
+- Singleton 이고, lazy-init 속성이 true 일 경우, getBean 메서드를 호출할 때, 객체가 생성된다.
+- prototype 일 경우, getBean 메서드를 호출 할 때, 객체가 생성된다.
+### Bean 소멸
+- IoC 컨테이너가 종료 될 때, 객체가 소멸된다. (ctx.close)
+### 객체 생성/소멸 메서드 등록
 
+### Bean 객체
+```xml
+public class BeanTest {
+	public BeanTest() {
+		System.out.println("BeanTest의 생성자");
+	}
+	
+	public void default_init() {
+		System.out.println("BeanTest의 default_init");
+	}
+
+	public void default_destroy() {
+		System.out.println("BeanTest의 default_destroy");
+	}
+	
+	public void bean_init() {
+		System.out.println("BeanTest의 init 메서드");
+	}
+	
+	public void bean_destroy() {
+		System.out.println("BeanTest의 destroy 메서드");
+	}
+}
+```
+### Beans.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="default_init" default-destroy-method="default_destroy">
+	<!-- default-init-method , default-destroy-method 설정 -->
+    
+	<bean id ="bean1" class="kr.ti.espania.beans.BeanTest" lazy-init="true" init-method="bean_init" destroy-method="bean_destroy"/>		
+</beans>
+```
 https://espania.tistory.com/383
 
 # MVC Framework
