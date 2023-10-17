@@ -14,6 +14,7 @@
 클럭 속도 높이는 법 이외에,<br/>
 코어수를 늘리기(듀얼 코어, 멀티 코어). 스레드 수를 늘리기(멀티 스레드). 두가지 방법이 있다. <br/>
 &emsp;
+<br>
 
 # 1. 코어
 
@@ -24,12 +25,13 @@
 ![스크린샷 2023-10-17 오후 9 49 05](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/9da593ef-2b65-4a4c-89cf-accb493ad311)
 <br/>
 반드시 코어 수에 비례하여 연산속도가 증가하는 것은 아니다. 
-
+<br>
+<br>
 # 2. 스레드
 
 ![스크린샷 2023-10-17 오후 9 51 57](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/915bd602-1758-4202-a8d6-761c9c2de2a2)
 
-### 하드웨어적 스레드
+## 하드웨어적 스레드
 
 - 하나의 코어가 동시에 처리하는 명령어 단위
   
@@ -41,18 +43,20 @@
 > <br>
 > 2코어 4스레드 CPU
 
-### 소프트웨어적 스레드 
+## 소프트웨어적 스레드 
 
-- 하나의 플그램에서 독립적으로 실행되는 단위
-> ![스크린샷 2023-10-17 오후 9 57 27](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/c9d4dedd-1022-4b56-84a4-c9043f135117)
-> <br>
+- 하나의 프로그램에서 독립적으로 실행되는 단위 <br>
+> ![스크린샷 2023-10-17 오후 10 44 56](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/aa520055-9e14-4219-a197-30289a8d8d46)<br>
 > 하나의 프로그램에서 하나의 스레드가 실행 or 동시에 두개 이상의 영역이 실행
 
-
+ <br>
 &emsp; 1코어 1스레드 CPU도 여러 소프트웨어적 스레드를 만들 수 있다. <br>
-&emsp; ![스크린샷 2023-10-17 오후 10 00 26](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/4e4d3d40-40a4-444d-9b89-3176f0aba6f7)<br>
+![스크린샷 2023-10-17 오후 10 00 26](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/4e4d3d40-40a4-444d-9b89-3176f0aba6f7) 
+<br>
 &emsp; 하드웨어적 스레드는 1개여도 소프트웨어적 스레드는 여러개를 만들 수 있다. <br>
 
+<br>
+<br>
 
   # 3. CISC & RISC
 
@@ -63,7 +67,7 @@
   ISA : CPU의 언어와 같다. 하드웨어가 소프트웨어를 어떻게 이해할지에 대한 약속.   <br>
   명령어 집합의 가장 큰 두축이 CISC , RISC이다. 
 
-  ### CISC (Complex instruction set computer)
+  ## CISC (Complex instruction set computer)
   복잡한 명령어 집합을 활용하는 컴퓨터 (CPU)  <br>
   x86, x86-64는 CISC 기반 명령어 집합 구조   <br>
   <br>
@@ -72,11 +76,12 @@
   다양하고 강력한 명령어를 활용하여 상대적으로 적은 수의 명령어로도 프로그램을 실행할 수 있다.  <br>
 
   단점 : 명령어 파이프라이닝이 불리하다. 하나의 명령어를 실행하는 데 여러 클럭 주기 필요.   <br>
+  <br>
   ![스크린샷 2023-10-17 오후 10 35 37](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/b85ff682-668c-4ff8-994e-4f606be8a397)  <br>
   ![스크린샷 2023-10-17 오후 10 35 48](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/70bd9403-a863-4a52-9163-f2a20e3cfdb6)  <br>
   <br>
   
- ### RISC (Reduced instruction set computer)  <br>
+ ## RISC (Reduced instruction set computer)  <br>
   명령어 종류가 적고, 짧고 규격화된 명령어 사용. => 명령어 파이프라이닝에 유리하다.   <br>
   명령어 종류가 cisc보다 적기에 더 많은 명령어로 프로그램을 동작시킨다.   <br>
 
