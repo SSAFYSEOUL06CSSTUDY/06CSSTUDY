@@ -55,3 +55,37 @@
 
 
   # 3. CISC & RISC
+
+![스크린샷 2023-10-17 오후 10 33 15](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/5d23b423-1e5b-4f82-a86c-9f24c5872b34)
+
+  cpu는 명령어를 실행한다.  <br>
+  명령어의 집합 : CPU의 언어와 같다.  <br>
+  ISA : CPU의 언어와 같다. 하드웨어가 소프트웨어를 어떻게 이해할지에 대한 약속.   <br>
+  명령어 집합의 가장 큰 두축이 CISC , RISC이다. 
+
+  ### CISC (Complex instruction set computer)
+  복잡한 명령어 집합을 활용하는 컴퓨터 (CPU)  <br>
+  x86, x86-64는 CISC 기반 명령어 집합 구조   <br>
+  <br>
+  복잡하고 다양한 명령어 활용  <br>
+  명령어의 형태와 크기가 다양한 가변 길이 명령어 활용   <br>
+  다양하고 강력한 명령어를 활용하여 상대적으로 적은 수의 명령어로도 프로그램을 실행할 수 있다.  <br>
+
+  단점 : 명령어 파이프라이닝이 불리하다. 하나의 명령어를 실행하는 데 여러 클럭 주기 필요.   <br>
+  ![스크린샷 2023-10-17 오후 10 35 37](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/b85ff682-668c-4ff8-994e-4f606be8a397)  <br>
+  ![스크린샷 2023-10-17 오후 10 35 48](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/70bd9403-a863-4a52-9163-f2a20e3cfdb6)  <br>
+  <br>
+  
+ ### RISC (Reduced instruction set computer)  <br>
+  명령어 종류가 적고, 짧고 규격화된 명령어 사용. => 명령어 파이프라이닝에 유리하다.   <br>
+  명령어 종류가 cisc보다 적기에 더 많은 명령어로 프로그램을 동작시킨다.   <br>
+
+  ---
+
+  # 정리 
+  
+  ![스크린샷 2023-10-17 오후 10 40 37](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/c0805b3d-b876-4d47-b87f-30e835beb1f6)
+
+  
+ 
+  
