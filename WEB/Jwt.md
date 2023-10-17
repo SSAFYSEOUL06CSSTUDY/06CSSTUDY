@@ -7,7 +7,8 @@
 
 # Jwt
 
-> JWT 토큰을 이용해 인증 인가 방식
+> JWT 토큰을 이용한 웹 인증 인가 방식
+<img width="909" alt="스크린샷 2023-10-18 오전 5 47 18" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/68680019-10b3-418e-a079-937d83598b33">
 
 # 1. 인증방식
 
@@ -57,6 +58,9 @@
 
 > JWT(JSON Web Token)의 약어<br>
 > 인증에 필요한 정보들을 암호화시킨 JSON을 토큰화 시킨 것
+
+![jwt_structure](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/37f096b0-9475-40c0-807e-e686f0cf7685)
+
 
 ## 2-1. Jwt 토큰의 구조
 
