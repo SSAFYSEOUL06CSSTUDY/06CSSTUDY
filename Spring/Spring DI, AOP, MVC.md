@@ -75,3 +75,43 @@ public class Programmer {
 - Bean 등록 방법 2가지
   - Annotatio
   - XML
+
+# AOP(Aspect Oriented Programming)
+- 관점 지향 프로그래밍
+- 핵심 로직과 부가 기능을 분리하여 애플리케이션 전체에 걸쳐 사용되는 부가 기능을 모듈화하여 재사용할 수 있도록 하는 것
+- 쉽게 말하면 **AOP는 공통 기능을 재사용하는 기법**이다.
+- 스프링에서는 컴파일이 끝나고 런타임 시점에서 AOP를 적용한다.
+
+# AOP 용어
+![aop용어](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/50236187/ad4684a7-80fe-4c23-8be3-2f245a5efe30)
+
+# 참고
+<a href="https://velog.io/@backtony/Spring-AOP-%EC%B4%9D%EC%A0%95%EB%A6%AC">Spring - AOP 총정리</a>
+
+# Spring MVC 흐름
+![MVC 동작 과정](https://github.com/namoo1818/TIL/assets/50236187/1585ea14-b33e-46cc-95fc-0a5b9d75b0f5)
+
+# Filter
+![필터](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/50236187/89fe1105-fad2-4631-a911-803a7bacc661)
+- 말 그대로 요청과 응답을 거른뒤 정제하는 역할
+- Dispatcher Servlet에 요청이 전달되기 전 / 후에 url 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 있는 기능 제공
+- 즉, 스프링 컨테이너가 아닌 톰캣과 같은 웹 컨테이너에 의해 관리가 되는 것이고, 스프링 범위 밖에서 처리되는 것(빈으로 등록 가능)
+## Filter Method
+- init() : 필터 객체를 초기화하고 서비스에 추가하기 위한 메소드
+- doFilter() : HTTP 요청이 디스패처 서블릿으로 전달되기 전에 웹 컨테이너에 의해 실행되는 메소드
+- destroy() : 필터 객체를 제거하고 사용하는 자원을 반환하기 위한 메소드
+
+# Interceptor
+![인터셉터](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/50236187/30c25ce7-92c7-48c6-ae05-708dd650f9a9)
+- 요청에 대한 작업 전 / 후로 가로챈다.
+- Dispatcher Servlet이 Controller를 호출하기 전 / 후에 인터셉터가 끼어들어 요청과 응답을 참조하거나 가공할 수 있는 기능 제공
+- 웹 컨테이너에서 동작하는 필터와 달리 인터셉터는 스프링 컨텍스트에서 동작
+- 필터는 Request와 Response를 조작할 수 있지만, 인터셉터는 조작할 수 없다
+- 스프링에서는 HandlerInterceptor 인터페이스해야 한다
+## HandlerInterceptor Method
+- preHandle() : Controller가 호출되기 전에 실행
+- postHandle() : Controller가 호출된 후에 실행( View 렌더링 전)
+- afterCompletion() : 모든 작업이 완료된 후에 실행( View 렌더링 후)
+
+![필터와 인터셉터](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/50236187/c8eb7981-ee8a-4093-b894-22b81dfbc944)
+
