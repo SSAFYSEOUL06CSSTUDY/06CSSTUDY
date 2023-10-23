@@ -47,9 +47,9 @@ public abstract class HttpServletBean extends HttpServlet {
 - 실제 작업은 해당 작업에 적합한 컨트롤러에 위임해 처리하므로, 중계 역할만 처리
 - 서블릿 컨테이너 맨 앞에서 모든 요청을 가장 먼저 받아 처리해주기 때문에, “프론트 컨트롤러”라고 부름
 
-### 2-2. 디스패쳐 서블릿 with Spring
-
-### 2-3. 디스패쳐 서블릿의 동작과정(with Rest_Spring)
+### 2-2. 디스패쳐 서블릿의 동작과정(with Rest_Spring)
+![디스패쳐서블릿필터컨트롤러](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/a9e7a903-db9f-4bda-8563-1d3e55d4659b)
+![디스패쳐 서블릿 동작과정](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/7c58e19a-91d3-4068-a469-af1e7c6e5a92)
 
 > 스프링 MVC에서 디스패쳐 서블릿의 동작과정을 보면 여기서는 필터와 인터셉터는 잠시 제외하고 설명
 
