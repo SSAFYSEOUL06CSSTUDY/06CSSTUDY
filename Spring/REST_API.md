@@ -3,7 +3,8 @@
 1. [**REST란?**](#1-REST란?)
 2. [**HTTP**](#2-HTTP)
 3. [**REST 특징**](#3-REST-특징)
-4. [**REST API 설계 **](#4-REST-API-설계)
+4. [**REST API 설계**](#4-REST-API-설계)
+5. [**요약**](#4-요약)
 
 
 
