@@ -2,8 +2,9 @@
 
 1. [**미리 알아야 할 것 들**](#1-미리-알아야-할-것-들)
 2. [**디스패쳐 서블릿**](#2-디스패쳐-서블릿)
+3. [**필터 & 인터셉터 (Filter & Interceptor)**](#3-필터--인터셉터-filter--interceptor)
 
-# 디스패쳐 서블릿
+# 디스패쳐 서블릿(Dispatcher Servlet)
 
 ## 1. 미리 알아야 할 것 들
 
@@ -11,17 +12,17 @@
 
 ### 1-1. Java EE(Jakarta EE)
 
-> 기업용 애플리케이션을 개발/실행하기 위한 기술과 환경을 제공하며 서블릿(Servlet), JSP, EJB, JDBC 등의 기술을 포함 하고 있는 “**분산 애플리케이션 개발 목적의 산업 표준 플랫폼**”
+> 기업용 애플리케이션을 개발/실행하기 위한 기술과 환경을 제공하며 서블릿(Servlet), JSP, JDBC 등의 기술을 포함 하고 있는 **분산 애플리케이션 개발 목적의 산업 표준 플랫폼**
 
 쉽게 말해서 자바 언어로 어플리케이션을 쉽게 개발할 수 있도록 필요한 것 들을 모아둔 것
 
-### 1-2. 서블렛
+### 1-2. 서블렛(Servlet)
 
-> Java EE의 요소 중 하나로 \*\*자바를 사용하여 웹페이지를 동적으로 생성하는 서버측 프로그램을 의미
+> Java EE의 요소 중 하나로 자바를 사용하여 웹페이지를 동적으로 생성하는 서버측 프로그램을 의미
 
     즉, 서블릿(Servlet)은 클라이언트 요청을 처리하고, 그 결과를 반환하는 웹 프로그래밍 기술
 
-## 2. 디스패쳐 서블릿
+## 2. 디스패쳐 서블릿(Dispatcher Servlet)
 
 > 디스패쳐 서블릿도 상속 구조를 보면 결국 서블릿<br>
 
@@ -42,16 +43,15 @@ public abstract class HttpServletBean extends HttpServlet {
 
 ### 2-1. 디스패쳐 서블릿의 개념(with 프론트 컨트롤러)
 
-- 과거에는 모든 서블릿을 URL 매핑을 위해 web.xml에 모두 등록해주었지만, 디스패처 서블릿을 통해 해당 작업이 간소화
 - 디스패처 서블릿은 스프링 MVC의 중앙 서블릿, 어플리케이션으로 오는 모든 요청을 핸들링하고 공통작업을 처리
 - 실제 작업은 해당 작업에 적합한 컨트롤러에 위임해 처리하므로, 중계 역할만 처리
-- 서블릿 컨테이너 맨 앞에서 모든 요청을 가장 먼저 받아 처리해주기 때문에, “프론트 컨트롤러”라고 부름
+- 서블릿 컨테이너 맨 앞에서 모든 요청을 가장 먼저 받아 처리해주기 때문에, **프론트 컨트롤러** 라고 부름
 
 ### 2-2. 디스패쳐 서블릿의 동작과정(with Rest_Spring)
-![디스패쳐서블릿필터컨트롤러](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/a9e7a903-db9f-4bda-8563-1d3e55d4659b)
+
 ![디스패쳐 서블릿 동작과정](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/7c58e19a-91d3-4068-a469-af1e7c6e5a92)
 
-> 스프링 MVC에서 디스패쳐 서블릿의 동작과정을 보면 여기서는 필터와 인터셉터는 잠시 제외하고 설명
+> 스프링 MVC에서 디스패쳐 서블릿의 동작과정을 설명, 필터와 인터셉터는 잠시 제외하고 설명
 
 ### **[Step1] 클라이언트의 요청이 디스패처 서블릿으로 전달**
 
@@ -88,3 +88,54 @@ public abstract class HttpServletBean extends HttpServlet {
 
 - 클라이언트로 최종 응답 값 반환
 - 응답이 데이터면 그대로 반환, 응답값이 화면이면 ViewResolver를 통해 해당화면 호출
+
+## 3. 필터 & 인터셉터 (Filter & Interceptor)
+
+> 요청과 응답을 비즈니스 로직과 분리해서 처리해야 할 때 사용하는 클래스
+
+![디스패쳐서블릿필터컨트롤러](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/a9e7a903-db9f-4bda-8563-1d3e55d4659b)
+
+### 3-1. 필터
+
+- Dispatcher Servlet에 요청이 전달되기 전 / 후에 url 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 있는 기능을 제공
+- 스프링 컨테이너가 아닌 톰캣과 같은 웹 컨테이너에 의해 관리 및 실행
+
+### 3-2. 인터셉터
+
+- Dispatcher Servlet이 Controller를 호출하기 전 / 후에 인터셉터가 끼어들어 요청과 응답을 참조하거나 가공할 수 있는 기능을 제공
+- 웹 컨테이너에서 동작하는 필터와 달리 인터셉터는 스프링 컨텍스트에서 동작
+
+### 3-3. 차이점 비교
+
+- 필터는 Request와 Response를 조작할 수 있지만, 인터셉터는 조작할 수 없음
+  => 필터는 객체를 바꿔 칠 수 있지만, 인터셉터는 불가능 대신 해당 객체의 값 변경은 가능
+- 필터는 Spring이 아닌 SevletRequest의 하위 요소 이므로 Spring과 별도로 사용 가능(Java EE 표준)
+- 인터셉터는 Spring에서 제공하는 기능
+- 따라서, 웹 컨테이너(서블릿 컨테이너)에서 동작하는 필터와 달리 인터셉터는 스프링 컨텍스트에서 동작
+
+```java
+public class MyFilter implements Filter {
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+    throws IOException, ServletException {
+        // 다른 request와 response를 넣어줄 수 있음
+        chain.doFilter(request, response);
+    }
+}
+```
+
+> 필터는 응답과 요청을 상속해 주므로 수정 가능
+
+```java
+public class MyInterceptor implements HandlerInterceptor {
+
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+    throws Exception {
+        // Request, Response를 교체할 수 없고 boolean 값만 반환 가능
+        return true;
+    }
+}
+```
+
+> 인터셉터는 true false 만 반환하므로 조작이 불가능
