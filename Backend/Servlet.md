@@ -26,8 +26,6 @@
  * 컨테이너에서 실행
  * 보안 기능을 적용하기 쉬움
 
-
-
 <br>
 
 ## 2. 서블릿의 동작 과정
@@ -39,41 +37,19 @@
 그리고 서블릿은 요청에 대한 기능을 수행한 수 결과를 반환하여 클라이언트에 전송.
 
 ```
-1. 클라이언트 요청
-2. HttpServletRequest, HttpServletResponse 객체 생성
-3. Web.xml이 어느 서블릿에 대해 요청한 것인지 탐색
+1. 클라이언트가 URL을 입력하면 HTTP Request가 Servlet Container로 전송.
+2. 요청을 전송받은 Servlet Container는 HttpServletRequest, HttpServletResponse 객체 생성
+3. Web.xml을 기반으로 사용자가 요청한 URL이 어느 서블릿에 대해 요청한 것인지 탐색
 4. 해당하는 서블릿에서 service() 메소드 호출
-5. doGet() 또는 doPost() 호출
+5. 클라이언트의 GET, POST 여부에 따라 doGet() 또는 doPost() 호출
 6. 동적 페이지 생성 후 ServletResponse 객체에 응답 전송
-7. HttpServletRequest, HttpServletResponse 객체 소멸
+7. 응답이 끝나면 HttpServletRequest, HttpServletResponse 객체 소멸
 ```
 
 > * web.xml : 서블릿을 작성했다면 해당 서블릿을 사용자가 요청한 경로와 맵핑시켜야<br>
 >   WAS에서 맵핑된 정보를 읽고 브라우저에서 해당 URL로 HTTP요청 시 해당 서블릿으로 요청을 전달해 줄 수 있음.<br>
 >   소스를 분석할 때도 가장 먼저 확인해봐야 할 부분.<br>
 >   톰캣을 예로 들면 웹 어플리케이션 서비스 처리에 대해 정의된 환경 설정 파일이 server디렉터리의 web.xml에 있음.
-
-
-### 서블릿 형식
-
-```
-public class FirstServlet extends HttpServlet {
-	@Override
-    public void init() {
-    ...
-	}
-    
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
-    ...
-    }
-    
-    @Override
-    public void destroy() {
-    ...
-    }
-}
-```
 
 <br>
 
@@ -115,6 +91,27 @@ public class FirstServlet extends HttpServlet {
 
 <br>
 
+### 서블릿 형식
+
+```
+public class FirstServlet extends HttpServlet {
+    @Override
+    public void init() {
+    ...
+	}
+    
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    ...
+    }
+    
+    @Override
+    public void destroy() {
+    ...
+    }
+}
+```
+
 ## 4. 서블릿 컨테이너
 
 > 서블릿 컨테이너란, 구현되어 있는 servlet 클래스의 규칙에 맞게 서블릿을 담고 관리해주는 컨테이너. <br>
@@ -127,7 +124,6 @@ public class FirstServlet extends HttpServlet {
   일반적으로 소켓을 만들고 listen, accept 등을 해야하지만 서블릿 컨테이너는 이러한 기능을 API로 제공하여<br>
   복잡한 과정을 생략할 수 있게 해줌.<br>
   그래서 개발자가 서블릿에 구현해야 할 비지니스 로직에 대해서만 초점을 두게끔 도와줌.
-
 
 - 서블릿 생명주기 관리
 
