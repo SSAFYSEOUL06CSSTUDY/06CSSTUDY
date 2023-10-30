@@ -126,6 +126,9 @@ Interceptor가 없다면 모든 컨트롤러마다 해당 로직을 넣어야 �
    filter : 1) 보안 관련 공통 작업 2) 모든 요청에 대한 로깅 또는 감사 3) 이미지/데이터 압축 및 문자열 인코딩<br>
    interceptor : 1) 인증/인가 등과 같은 공통 작업 2) Controller로 넘겨주는 정보의 가공 3) API 호출에 대한 로깅 또는 감사<br>
 
-   
+
+### 참고자료 
+https://gngsn.tistory.com/153 <br>
+https://kihwan95.tistory.com/7
 
  
