@@ -8,7 +8,7 @@
 
 DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩할 수 있는 HTML 기반 템플릿 구문을 사용
 
-### Template Syntax 종류 
+## Template Syntax 종류 
 
 1. Text Interpolation
 
@@ -19,6 +19,7 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 * 콧수염 구문은 해당 구성 요소 인스턴스의 msg 속성 값으로 대체
 * msg 속성이 변경될 때마다 업데이트 된다. 
 
+<br>
 2. Raw HTML
 
        <div v-html="rawHTML"></div>
@@ -29,6 +30,7 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 > 웹사이트에서 임의의 HTML을 동적으로 렌더링하면 XSS 취약점이 쉽게 발생할 수 있다.<br>
 > 이는 매우 위험하기 때문에 사용자가 제공한 컨텐츠에서의 사용은 금지한다.
 
+<br>
 3. Attribute Bindings
 
        <div v-bind:id="dynamicId"></div>
@@ -38,6 +40,7 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 * HTML의 id 속성 값을 vue의 dynamicId 속성과 동기화 되도록 한다.
 * 바인딩 값이 null 이나 undefind 인 경우 렌더링 요소가 제거된다.
 
+<br>
 4. JavaScript Expressions
 
        {{ number + 1 }}
@@ -45,11 +48,13 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
        {{ message.split('').reverse().join('') }}
        <div :id="`list-${id}`"></div>
 
+
 * Vue는 모든 데이터 바인딩 내에서 JavaScript 표현식의 모든 기능을 지원
 * Vue 템플릿에서 JavaScript 표현식을 사용할 수 있는 위치
   * 콧수염 구문 내부
   * 모든 directive의 속성 값 (v-로 시작하는 특수 속성)
  
+<br>
 
 > ! 표현식 주의사항 <br>
 > 각 바인딩에는 하나의 단일 표현식만 포함될 수 있다.<br>
@@ -57,8 +62,9 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 
 <br>
 <br>
+<br>
 
-### Directive
+## Directive
 
 > v- 접두사가 있는 특수 속성
 
@@ -73,16 +79,19 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 ![스크린샷 2023-11-06 오후 9 26 00](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/6d27520e-6028-4a8b-93de-cdabdef38240)
 
 
+<br>
+
 > Arguments
 
       <a v-bind:href="myUrl">Link</a>
-
 * 일부 directive 는 directive 뒤에 콜론(:) 으로 표시되는 인자를 사용할 수 있음
 * 위 예시의 href는 HTML <a> 요소의 href 속성 값을 myUrl 값에 바인딩 하도록 하는 v-bind 인자
-
+  
       <button v-on:click="doSomething">Button</button>
 
 * 위 예시의 click은 이벤트 수신할 이벤트 이름을 작성하는 v-on 의 인자
+
+<br>
 
 > Modifiers
 
@@ -91,11 +100,14 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 
       <form @submit.prevent="onSubmit">...</form>
 
+<br>
+
 > Built-in Directives
 
 ![스크린샷 2023-11-06 오후 9 28 00](https://github.com/Youth787/SSAFY_CS_Study/assets/90955152/cd935592-5ef9-45a5-b3bd-1f37cf3e4099)
 
 
+<br>
 <br>
 <br>
 
@@ -105,6 +117,8 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 ### V-bind
 
 하나 이상의 속성 또는 컴포넌트 데이터를 표현식에 동적으로 바인딩
+
+<br>
 
 ### 1. Attribute Bindings
 
@@ -120,10 +134,13 @@ v-bind shorthand (약어) → : (colon)
        <a :href="myUrl">Move to url</a>
 
 > Dynamic attribute name (동적 인자 이름)
-       * 대괄호로 감싸서 directive argument에 JavaScript 표현식을 사용할 수도 있음
-       * JavaScript 표현식에 따라 동적으로 평가된 값이 최종 argument 값으로 사용됨
+
+* 대괄호로 감싸서 directive argument에 JavaScript 표현식을 사용할 수도 있음
+* JavaScript 표현식에 따라 동적으로 평가된 값이 최종 argument 값으로 사용됨
 
        <button :[key]="myValue"></button>
+
+<br>
 
 ### 2. Class and Style Bindings
 
@@ -132,9 +149,12 @@ v-bind shorthand (약어) → : (colon)
 그러나 단순히 문자열 연결을 사용하여 이러한 값을 생성하는 것은 번거롭고 오류가 발생하기가 쉽다. <br>
 Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 배열을 활용한 개선 사항을 제공한다. <br>
 
-> 1) Binding HTML Classes
+<br>
+
+1) Binding HTML Classes
 
 > Binding to Objects:
+
   객체를 :class 에 전달하여 클래스를 동적으로 전환할 수 있다. <br>
   예시) isActive 의 T/F에 의해 active 클래스의 존재가 결정된다. <br>
 
@@ -171,6 +191,8 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
 배열 구문 내에서 객체 구문 사용
 
        <div :class="[{ active: isActive }, infoClass]">Text</div>
+
+<br>
 
 ### 3. Binding Inline Styles
 
