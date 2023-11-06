@@ -106,7 +106,7 @@ DOM을 기본 구성 요소 인스턴스 데이터에 선언적으로 바인딩�
 
 하나 이상의 속성 또는 컴포넌트 데이터를 표현식에 동적으로 바인딩
 
-> 1. Attribute Bindings
+### 1. Attribute Bindings
 
 HTML 의 속성 값을 Vue의 상태 속성 값과 동기화 되도록 한다.
 
@@ -119,22 +119,22 @@ v-bind shorthand (약어) → : (colon)
        <img :src="imageSrc">
        <a :href="myUrl">Move to url</a>
 
-* Dynamic attribute name (동적 인자 이름)
+> Dynamic attribute name (동적 인자 이름)
        * 대괄호로 감싸서 directive argument에 JavaScript 표현식을 사용할 수도 있음
        * JavaScript 표현식에 따라 동적으로 평가된 값이 최종 argument 값으로 사용됨
 
        <button :[key]="myValue"></button>
 
-> 2. Class and Style Bindings
+### 2. Class and Style Bindings
 
 * 클래스와 스타일은 모두 속성이므로 v-bind를 사용하여 다른 속성과 마찬가지로 동적으로 문자열 값을 할당할 수 있음
 
 그러나 단순히 문자열 연결을 사용하여 이러한 값을 생성하는 것은 번거롭고 오류가 발생하기가 쉽다. <br>
 Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 배열을 활용한 개선 사항을 제공한다. <br>
 
-1) Binding HTML Classes
+> 1) Binding HTML Classes
 
-* Binding to Objects:
+> Binding to Objects:
   객체를 :class 에 전달하여 클래스를 동적으로 전환할 수 있다. <br>
   예시) isActive 의 T/F에 의해 active 클래스의 존재가 결정된다. <br>
 
@@ -160,7 +160,7 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
        })
        <div class="static" :class="classObj">Text</div>
 
-* Binding to Arrays
+> Binding to Arrays
 
 :class를 배열에 바인딩하여 클래스 목록을 적용할 수 있다.
 
@@ -172,9 +172,9 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
 
        <div :class="[{ active: isActive }, infoClass]">Text</div>
 
-3. Binding Inline Styles
+### 3. Binding Inline Styles
 
-* Binding to Objects
+> Binding to Objects
 
 :style 은 JavaScript 객체 값에 대한 바인딩을 지원 (HTML style 속성에 해당)
 
@@ -194,7 +194,7 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
        })
        <div :style="styleObj">Text</div>
 
-* Binding to Arrays
+> Binding to Arrays
 
 여러 스타일 객체의 배열에 :style을 바인딩할 수 있다. <br>
 작성한객체는 병합되어 동일한 요소에 적용한다.
