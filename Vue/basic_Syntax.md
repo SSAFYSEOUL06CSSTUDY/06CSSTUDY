@@ -228,5 +228,8 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
        <div :style="[styleObj, styleObj2]">Text</div>
 
 
+---
+참고 : https://velog.io/@bzeromo/Vue-Vue-Basic-Syntax-1
+
 
 
