@@ -25,25 +25,37 @@
 ---
 
 기본 흐름 파악
-
-- 부모 → 자식으로 data를 props로 상속
-- 자식 컴포넌트에서 값 변경시
-  자식 → 부모로 해당 사실을 $emit으로 알려줍니다.
-  ※ 자식이 직접 값을 변경하지 X, 값은 부모가 변경
+<table>
+  <tr>
+    <td><img src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/772bc86c-6318-439d-ac42-5827850809cf" width="350" title="image title"></td>
+    <td>
+      - 부모 → 자식으로 data를 props로 상속<br>
+      - 자식 컴포넌트에서 값 변경시<br>
+        자식 → 부모로 해당 사실을 $emit으로 알려줍니다.<br>
+        ※ 자식이 직접 값을 변경하지 않고, 부모가 값을 변경합니다.
+    </td>
+  </tr>
+</table>
 
 ---
+<table>
+  <tr>
+    <td><img src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/64ccf442-52e9-480d-85a5-ae864163437d" width="500" title="image title"></td>
+    <td>
+     	데이터는 무조건 단 방향으로만 관리
 
-데이터는 무조건 단 방향으로만 관리
+	why? 양방향으로 관리하면 사고 발생
 
-why? 양방향으로 관리하면 사고 발생
+	Data의 관리는 항상 부모가
 
-Data의 관리는 항상 부모가
+	자식 컴포넌트는 부모에게 값을 어떻게 바꾸고 싶다는 것 만을 알려줍니다.(emit)
 
-자식 컴포넌트는 부모에게 값을 어떻게 바꾸고 싶다는 것 만을 알려줍니다.(emit)
+	자식이 직접 값을 관리하기 시작하면 각각의 경우마다 값이 달라지는 문제가 생깁니다.
 
-자식이 직접 값을 관리하기 시작하면 각각의 경우마다 값이 달라지는 문제가 생깁니다.
-
-그래서 여기서 단방향은 부모→ 자식 으로의 단방향을 말합니다.데이터는 항상 부모가 자식에게 내려주는 것
+	그래서 여기서 단방향은 부모→ 자식 으로의 단방향을 말합니다.데이터는 항상 부모가 자식에게 내려주는 것
+    </td>
+  </tr>
+</table>
 
 # one-way-down binding 하향식 단방향 바인딩
 
@@ -53,6 +65,13 @@ Data의 관리는 항상 부모가
 
 - 부모→자식 O / 부모 컴포넌트 업데이트시 자식 컴포넌트의 모든 props가 최신으로 업데이트
 - 자식→부모 X
+  <table>
+  <tr>
+    <td><img src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/11f734fb-f0c5-4ff8-9354-a79b9101ed35"></td>
+    <td><img src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/58aaf5b6-e165-443c-92c6-5f843118a192"></td>
+    <td><img src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/6df7f5b5-5e03-4ace-8e02-47636a7af320"></td>
+  </tr>
+</table>
 
 # 2. Props 상속 과정 (부모 ⇒ 자식)
 
@@ -199,7 +218,7 @@ const props = defineProps({
 </script>
 ```
 
-### $emit 이벤트는 자식에서 이벤트 생성, 부모에서 해당 이벤트 수신의 과정으로 작동합니다.
+### $emit 이벤트는 "자식에서 이벤트 생성", "부모에서 해당 이벤트 수신"의 과정으로 작동합니다.
 
 ---
 
