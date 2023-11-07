@@ -194,7 +194,7 @@ Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 �
 
 <br>
 
-### 3. Binding Inline Styles
+2) Binding Inline Styles
 
 > Binding to Objects
 
