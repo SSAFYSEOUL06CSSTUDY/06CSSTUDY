@@ -187,6 +187,7 @@ axios.interceptors.request.use(config => {
 #### - 전체적인 JWT 로직 흐름도
 
 <!-- JWT logic flow img -->
+<img width="920" alt="스크린샷 2023-11-30 오전 2 28 21" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/945b6d54-4cfc-4747-af09-40efcfa53496">
 
 ### 2. Jwt의 문제점
 
