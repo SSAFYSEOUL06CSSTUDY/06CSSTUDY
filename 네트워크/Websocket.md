@@ -4,6 +4,7 @@
 2. [**Websocket**](#2-websocket)
 3. [**Websocket 작동방식**](#3-websocket-작동방식)
 4. [**Websocket의 문제점**](#4-websocket의-문제점)
+5. [**샘플 코드**](#5-샘플-코드)
 
 ## 1. 양방향 통신에서의 HTTP
 
@@ -26,7 +27,8 @@
     - HTTP 전송 중에도 페이지 사용 가능
 
   <!-- http ajax 비교이미지 -->
-  ![HTTPvsAJAX](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/e71d8d70-095d-4cee-922a-e181d00a3ce7)
+
+![HTTPvsAJAX](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/e71d8d70-095d-4cee-922a-e181d00a3ce7)
 
 ### AJAX의 문제점
 
@@ -58,7 +60,6 @@
 
 <!-- 작동방식 요약이미지 -->
 <img width="447" alt="스크린샷 2023-12-13 오전 9 08 48" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/3a7aa256-d0a1-4301-928b-13dab3880a7a">
-
 
 ### (1) 웹 소켓 요청
 
@@ -111,8 +112,88 @@ Sec-WebSocket-Accept: ...
 > HTML5 이전의 기술로 구현된 서비스 에서 웹 소켓처럼 사용할 수 있도록 도와주는 기술(Javascript 기반)
 
 <!-- 크로스 브라우징 이미지 -->
+
 ![websocket_cross](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/adec5f52-5765-4fe1-8afe-324f492ee86e)
 
 ### (2) 연결 비정상 종료시 불명확한 에러코드
 
 > 서버와 클라이언트 간의 연결이 끊어졌을 때 생성되는 에러 메세지가 구체적이지 않아 디버깅이 어려움
+
+## 5. 샘플 코드
+
+### (1) 웹 소캣 서버 [server.js]
+
+<details>
+<summary>공지사항 기능으로 양방향 통신 테스트</summary>
+
+```
+const WebSocket = require("ws");
+const readline = require("readline");
+
+const server = new WebSocket.Server({ port: 3000 });
+
+server.on("connection", (ws) => {
+  ws.on("message", (message) => {
+    console.log(`받은 메시지: ${message}`);
+    // 서버로부터 받은 메시지를 모든 클라이언트에게 전송
+    server.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(message);
+      }
+    });
+  });
+  ws.send("모의 채팅 서버에 오신 것을 환영합니다!");
+});
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+console.log("WebSocket 서버가 ws://localhost:3000에서 시작되었습니다.");
+console.log("연결된 모든 클라이언트에게 알림을 보내려면 메시지를 입력하세요:");
+
+rl.on("line", (input) => {
+  server.clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(`[공지사항]: ${input}`);
+    }
+  });
+});
+
+```
+
+</details>
+
+### (2) 메세지 변환 코드
+
+<details>
+<summary>Blob을 텍스트로 변환</summary>
+```
+const chatBox = document.getElementById("chatbox");
+const messageInput = document.getElementById("messageInput");
+
+const webSocket = new WebSocket("ws://localhost:3000");
+
+webSocket.onmessage = async function (event) {
+let message;
+if (event.data instanceof Blob) {
+message = await event.data.text();
+} else {
+message = event.data;
+}
+chatBox.innerHTML += `<div>${message}</div>`;
+chatBox.scrollTop = chatBox.scrollHeight;
+};
+
+function sendMessage() {
+const message = messageInput.value;
+if (message) {
+webSocket.send(message);
+messageInput.value = "";
+}
+}
+
+```
+</details>
+```
