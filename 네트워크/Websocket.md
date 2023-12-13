@@ -3,7 +3,7 @@
 1. [**양방향 통신에서의 HTTP**](#1-양방향-통신에서의-http)
 2. [**Websocket**](#2-websocket)
 3. [**Websocket 작동방식**](#3-websocket-작동방식)
-4. [**Websocket의 호환성**](#4-websocket의-호환성)
+4. [**Websocket의 문제점**](#4-websocket의-문제점)
 
 ## 1. 양방향 통신에서의 HTTP
 
@@ -26,6 +26,7 @@
     - HTTP 전송 중에도 페이지 사용 가능
 
   <!-- http ajax 비교이미지 -->
+  ![HTTPvsAJAX](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/e71d8d70-095d-4cee-922a-e181d00a3ce7)
 
 ### AJAX의 문제점
 
@@ -56,6 +57,8 @@
 ## 3. Websocket 작동방식
 
 <!-- 작동방식 요약이미지 -->
+<img width="447" alt="스크린샷 2023-12-13 오전 9 08 48" src="https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/3a7aa256-d0a1-4301-928b-13dab3880a7a">
+
 
 ### (1) 웹 소켓 요청
 
@@ -108,6 +111,7 @@ Sec-WebSocket-Accept: ...
 > HTML5 이전의 기술로 구현된 서비스 에서 웹 소켓처럼 사용할 수 있도록 도와주는 기술(Javascript 기반)
 
 <!-- 크로스 브라우징 이미지 -->
+![websocket_cross](https://github.com/SSAFYSEOUL06CSSTUDY/06CSSTUDY/assets/108852263/adec5f52-5765-4fe1-8afe-324f492ee86e)
 
 ### (2) 연결 비정상 종료시 불명확한 에러코드
 
