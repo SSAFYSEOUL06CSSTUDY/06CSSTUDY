@@ -61,7 +61,7 @@
 
 ## 4. 참고자료
 - [java collections framework 정리된 사이트](https://inpa.tistory.com/entry/JCF-%F0%9F%A7%B1-Collections-Framework-%EC%A2%85%EB%A5%98-%EC%B4%9D%EC%A0%95%EB%A6%AC#queue_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
-</br>
+
 - [발표 참고 자료](https://velog.io/@devwoong/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-Java-Collection-Framework-Step2)
 - [발표 참고 자료2](https://hudi.blog/java-collection-framework-1/)
 - [발표 참고 자료3](https://st-lab.tistory.com/142)
