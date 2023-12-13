@@ -72,7 +72,6 @@
 
 	int N = 13;
 	int[] arr = new int[N];
-	int[] dp = new int[N];
 
 	// 이분 탐색을 이용한 방법
 	memo = new int[N+1];
