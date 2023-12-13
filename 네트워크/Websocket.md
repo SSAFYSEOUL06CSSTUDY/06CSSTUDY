@@ -5,6 +5,7 @@
 3. [**Websocket 작동방식**](#3-websocket-작동방식)
 4. [**Websocket의 문제점**](#4-websocket의-문제점)
 5. [**샘플 코드**](#5-샘플-코드)
+6. [**참고 자료**](#6-참고-자료)
 
 ## 1. 양방향 통신에서의 HTTP
 
@@ -169,6 +170,7 @@ rl.on("line", (input) => {
 
 <details>
 <summary>Blob을 텍스트로 변환</summary>
+
 ```
 const chatBox = document.getElementById("chatbox");
 const messageInput = document.getElementById("messageInput");
@@ -193,7 +195,14 @@ webSocket.send(message);
 messageInput.value = "";
 }
 }
+```
 
-```
 </details>
-```
+
+## 6. 참고 자료
+
+### 모던 JavaScript 튜토리얼<br> https://ko.javascript.info/websocket
+
+### Chanstory <br>https://www.chanstory.dev/blog/post/26
+
+### 우아한 테코톡 <br> https://www.youtube.com/watch?v=MPQHvwPxDUw&list=PLgXGHBqgT2TvpJ_p9L_yZKPifgdBOzdVH&index=98
