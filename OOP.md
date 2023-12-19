@@ -185,4 +185,27 @@ SRP는 OOP의 solid 원칙중 하나 입니다. SPR는 하나의 클래스가 �
 
 OCP 또한 solid 원칙 중 하나이며 확장에는 열려있고 변경에는 닫혀있어야 한다는 의미입니다. 즉 기존 코드를 변경하지 않으면서 새로운 기능을 추가하는 것에는 유연해야 한다는 의미입니다.
 
-참고: https://howtodoinjava.com/java/oops/object-oriented-programming/
+## SOLID 설계 원칙
+
+### S : SRP, Single Responsibility Principle 단일 책임 원칙
+
+객체는 단 하나의 책임만 가져야 한다.
+
+### O : OCP, Open Close Prinicple 개방 폐쇄 원칙
+
+기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다.
+
+### L : LSP, Liskov Substitution Principle 리스코프 치환 원칙
+
+일반화 관계에 대한 이야기며, 자식 클래스는 최소한 자신의 부모 클래스 에서 가능한 행위는 수행할 수 있어야 한다.
+
+### I : ISP, Interface Segregation Principle 인터페이스 분리 원칙
+
+인터페이스를 클라이언트에 특화되도록 분리시키라는 설계 원칙.
+
+### D : DIP, Dependency Inversion Principle의존 역전 원칙
+
+고수준 모듈은 저수준 모듈의 구현에 의존해서는 안된다. 의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것이다.
+
+참고1: https://howtodoinjava.com/java/oops/object-oriented-programming/
+참고2: https://www.notion.so/05-OOP-4-OOP-5-51d3e07ca00b48a99b838b32bdc86146
