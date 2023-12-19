@@ -207,5 +207,4 @@ OCP 또한 solid 원칙 중 하나이며 확장에는 열려있고 변경에는 
 
 고수준 모듈은 저수준 모듈의 구현에 의존해서는 안된다. 의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것이다.
 
-참고1: https://howtodoinjava.com/java/oops/object-oriented-programming/
-참고2: https://www.notion.so/05-OOP-4-OOP-5-51d3e07ca00b48a99b838b32bdc86146
+참고: https://howtodoinjava.com/java/oops/object-oriented-programming/, https://www.notion.so/05-OOP-4-OOP-5-51d3e07ca00b48a99b838b32bdc86146
