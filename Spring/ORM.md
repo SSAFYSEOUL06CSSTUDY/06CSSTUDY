@@ -1,4 +1,4 @@
-# 목차
+# ORM
 
 ## 1. 영속성(Persistence)
 
@@ -6,7 +6,7 @@
 
 > 영속성을 가지지 못 하면, 메모리(램)에서만 존재하기에 프로그램을 종료하면 사라진다.
 
-> 데이터를 데티어베이스에 저장하는 2가지 방법
+> 데이터를 데이터베이스에 저장하는 2가지 방법
 
 - JDBC API
 - Persistence Framework( Mybatis, JPA - Hybernate )
@@ -62,10 +62,14 @@
 ### JPA 동작 과정
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnbMBs%2FbtrcMZCYSUM%2FNbytKvoXneDxsFN7mZ3BdK%2Fimg.png"/>
+
 ### [ 장점 ]
+
 - Java 코드만 작성해도 자동으로 CRUD를 생성해주고, 테이블 변경 시에도 객체 수정시 JPA가 처리해주기 생산성이 높음
 - JPA는 인터페이스이기 때문에 특정 DBMS 에 종속적이지 않다. 코드 세팅만 약간 수정해 주면 해결(SQL MAPPER 와의 차이점)
+
 ### [ 단점 ]
+
 - 기존 SQL과 문법이 달라서 추가 학습이 필요하기에, 러닝커브가 MyBatis 대비 높음
 - JPA 만의 동작원리를 제대로 이해하지 못한 채로 사용한다면 성능 문제가 발생 (N + 1 문제)
 - JPA 만으로는 복잡한 쿼리 사용이 어려움, Query DSL 등의 추가적인 활용 필요
