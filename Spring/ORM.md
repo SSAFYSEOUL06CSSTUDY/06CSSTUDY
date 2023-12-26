@@ -113,6 +113,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 }
 ```
 
+> # 코드를 통해 알 수 있는 점
+
+- JPA가 더 간단하고 효율적으로 코드를 구성 할 수 있다.
+- 단, MyBatis 대비 복잡한 기능을 구현하는 부분에서는 제한적일 수 있다.
+
 ## 6. 참고
 
 - 10분 테코톡 https://www.youtube.com/watch?v=RWFtuQUx3fo
